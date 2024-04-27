@@ -1,7 +1,7 @@
 video = "";
 function preload(){
     video = createVideo('video.mp4');
-
+    video.hide();
 }
 
 function setup(){
@@ -19,6 +19,6 @@ function modelLoaded(){
     console.log("Model Loaded!");
     status = true;
     video.loop();
-    video.speed(1);
-    video.volume(0);
+    video.speed(2);
+    video.volume(0.5);
 }
