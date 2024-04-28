@@ -18,18 +18,18 @@ function draw(){
             document.getElementById("status").innerHTML = "Status : Objects Detected"
             document.getElementById("numberofobjects").innerhtml = "Number Of Objects Detected : " + objects;
 
-            fill("#FF0000");
+            fill("red");
             percent = floor(objects[i].confidence * 100);
-            text(objects[i].label + " " + percent + "%", objects[i].x + 15, objects[i].y + 15)
+            text(objects[i].label + " " + percent + "%", objects[i].x + 15, objects[i].y + 15);
+            noFill();
+            stroke("red");
+            rect(objects[i].x, objects[i].y, objects[i].width, objects[i].height);
         }
     }
 }
 function start(){
     objectDetector = ml5.objectDetector('cocossd', modelLoaded);
     document.getElementById("status").innerHTML = "Status : Detecting Objects";
-    noFill();
-    stroke("#FF0000");
-    rect(objects[i].x, objects[i].y, objects[i].width, objects[i].height);
 }
 function modelLoaded(){
     console.log("Model Loaded!");
